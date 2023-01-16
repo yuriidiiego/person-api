@@ -1,0 +1,183 @@
+{
+  "info": {
+    "_postman_id": "904c5f52-bcea-454c-9f15-bfe7aa4c85d3",
+    "name": "attornatus-person-api",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "17690371"
+  },
+  "item": [
+    {
+      "name": "Create new person.",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"Levi Andrade\",\n    \"birthDate\": \"02/12/2013\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{api-host}}/api/v1/persons",
+          "host": ["{{api-host}}"],
+          "path": ["api", "v1", "persons"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update person partially.",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"Levi Clementino\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{api-host}}/api/v1/persons/1",
+          "host": ["{{api-host}}"],
+          "path": ["api", "v1", "persons", "1"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get person by Id.",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{api-host}}/api/v1/persons/1",
+          "host": ["{{api-host}}"],
+          "path": ["api", "v1", "persons", "1"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get all person.",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{api-host}}/api/v1/persons",
+          "host": ["{{api-host}}"],
+          "path": ["api", "v1", "persons"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create address for person.",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"street\": \"Rua dos Bobos\",\n    \"zipCode\": \"67145-323\",\n    \"number\": 0,\n    \"city\": \"Cidade dos Sonhos\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{api-host}}/api/v1/addresses/person/1",
+          "host": ["{{api-host}}"],
+          "path": ["api", "v1", "addresses", "person", "1"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get addresses for person.",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{api-host}}/api/v1/addresses/person/1",
+          "host": ["{{api-host}}"],
+          "path": ["api", "v1", "addresses", "person", "1"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Set the primary adress for the person.",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{api-host}}/api/v1/addresses/main?addressId=1&personId=1",
+          "host": ["{{api-host}}"],
+          "path": ["api", "v1", "addresses", "main"],
+          "query": [
+            {
+              "key": "addressId",
+              "value": "1"
+            },
+            {
+              "key": "personId",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

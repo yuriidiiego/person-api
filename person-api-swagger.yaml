@@ -1,0 +1,348 @@
+openapi: 3.0.1
+info:
+  title: Person API
+  description: API for managing persons
+  contact:
+    name: Yuri Nascimento
+    url: https://github.com/yuriidiiego
+    email: yuriidiiego@gmail.com
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: v1
+servers:
+- url: http://localhost:8080
+  description: Local server
+tags:
+- name: Person
+  description: API for managing persons
+- name: Address
+  description: API for managing addresses
+paths:
+  /api/v1/addresses/main:
+    put:
+      tags:
+      - Address
+      summary: Set an address as main for a person
+      operationId: setMainAddress
+      parameters:
+      - name: personId
+        in: query
+        description: Person ID
+        required: true
+        schema:
+          type: integer
+          format: int64
+        example: 1
+      - name: addressId
+        in: query
+        description: Address ID
+        required: true
+        schema:
+          type: string
+        example: "67145318"
+      responses:
+        "200":
+          description: Address set as main
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AddressResponse'
+        "400":
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        "404":
+          description: Address or person not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /api/v1/persons:
+    get:
+      tags:
+      - Person
+      summary: List all persons
+      operationId: listPersons
+      responses:
+        "200":
+          description: Persons found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PersonResponse'
+    post:
+      tags:
+      - Person
+      summary: Create a person
+      operationId: createPerson
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreatePersonRequest'
+        required: true
+      responses:
+        "201":
+          description: Person created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PersonResponse'
+        "400":
+          description: Name and birthdate are required
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/PersonResponse'
+  /api/v1/addresses/person/{personId}:
+    get:
+      tags:
+      - Address
+      summary: List addresses for a person
+      operationId: listAddresses
+      parameters:
+      - name: personId
+        in: path
+        description: Person ID
+        required: true
+        schema:
+          type: integer
+          format: int64
+        example: 1
+      responses:
+        "200":
+          description: Addresses listed
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AddressResponse'
+        "400":
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        "404":
+          description: Person not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    post:
+      tags:
+      - Address
+      summary: Create an address for a person
+      operationId: createAddress
+      parameters:
+      - name: personId
+        in: path
+        description: Person ID
+        required: true
+        schema:
+          type: integer
+          format: int64
+        example: 1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateAddressRequest'
+        required: true
+      responses:
+        "201":
+          description: Address created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AddressResponse'
+        "400":
+          description: Invalid input
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/AddressResponse'
+        "409":
+          description: Address already exists
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /api/v1/persons/{id}:
+    get:
+      tags:
+      - Person
+      summary: Get a person
+      operationId: getPerson
+      parameters:
+      - name: id
+        in: path
+        description: Person id
+        required: true
+        schema:
+          type: integer
+          format: int64
+        example: 1
+      responses:
+        "200":
+          description: Person found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PersonResponse'
+        "404":
+          description: Person not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    patch:
+      tags:
+      - Person
+      summary: Edit a person
+      operationId: editPerson
+      parameters:
+      - name: id
+        in: path
+        description: Person id
+        required: true
+        schema:
+          type: integer
+          format: int64
+        example: 1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdatePersonRequest'
+        required: true
+      responses:
+        "200":
+          description: Person edited
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PersonResponse'
+        "404":
+          description: Person not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+components:
+  schemas:
+    AddressResponse:
+      type: object
+      properties:
+        street:
+          type: string
+          description: Street name
+          example: Rua dos campos
+        city:
+          type: string
+          description: City name
+          example: São Paulo
+        zipCode:
+          type: string
+          description: ZipCode
+          example: 12345-678
+        number:
+          type: integer
+          description: Number of the address
+          format: int32
+          example: 123
+        primary:
+          type: boolean
+          description: Primary address
+          example: true
+      description: Payload to return an address
+    ErrorResponse:
+      type: object
+      properties:
+        statusCode:
+          type: integer
+          description: Status code
+          format: int32
+          example: 400
+        timestamp:
+          type: string
+          description: Timestamp
+          format: date-time
+        message:
+          type: string
+          description: Message
+          example: Bad Request
+      description: Payload to return an exception message
+    PersonResponse:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: Person id
+          format: int64
+          example: 1
+        name:
+          type: string
+          description: Person name
+          example: Daniel Costa
+        birthDate:
+          type: string
+          description: Person birth date
+          format: date
+      description: Payload to return a person
+    CreatePersonRequest:
+      required:
+      - birthDate
+      - name
+      type: object
+      properties:
+        name:
+          pattern: "[A-Za-z ]+"
+          type: string
+          description: Person name
+          example: Daniel Costa
+        birthDate:
+          type: string
+          description: BirthDate
+          format: date
+      description: Payload to create a new person
+    CreateAddressRequest:
+      required:
+      - city
+      - number
+      - street
+      - zipCode
+      type: object
+      properties:
+        street:
+          type: string
+          description: Street name
+          example: Rua das Flores
+        zipCode:
+          type: string
+          description: ZipCode
+          example: 12345-678
+        number:
+          type: integer
+          description: Number of the address
+          format: int32
+          example: 123
+        city:
+          type: string
+          description: City
+          example: São Paulo
+    UpdatePersonRequest:
+      type: object
+      properties:
+        name:
+          pattern: "[A-Za-z ]+"
+          type: string
+          description: Name of the person
+          example: Estevão Correia
+        birthDate:
+          type: string
+          description: BirthDate
+          format: date
+      description: Payload to update a person
