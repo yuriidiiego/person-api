@@ -8,10 +8,11 @@ This is a simple API that allows you to manage people in a company through REST 
 
 This project was developed with the following technologies:
 
-<img src="https://img.shields.io/badge/-Java-007396?style=flat-square&logo=java&logoColor=white" alt="Java" /> 
+<img src="https://img.shields.io/badge/-Java-007396?style=flat-square&logo=java&logoColor=white" alt="Java" />
+
 <img src="https://img.shields.io/badge/-Spring%20Boot-6DB33F?style=flat-square&logo=spring&logoColor=white" alt="Spring Boot" /> 
 <img src="https://img.shields.io/badge/-Maven-C71A36?style=flat-square&logo=apache-maven&logoColor=white" alt="Maven" /> <img src="https://img.shields.io/badge/-MapStruct-007396?style=flat-square&logo=mapstruct&logoColor=white" alt="MapStruct" />
-<img src="https://img.shields.io/badge/-H2%20Database-007396?style=flat-square&logo=h2-database&logoColor=white" alt="H2 Database" /> 
+<img src="https://img.shields.io/badge/-PostgreSQL-336791?style=flat-square&logo=postgresql&logoColor=white" alt="PostgreSQL" />
 <img src="https://img.shields.io/badge/-Swagger-007396?style=flat-square&logo=swagger&logoColor=white" alt="Swagger" />
 
 ## 📝 Requirements
