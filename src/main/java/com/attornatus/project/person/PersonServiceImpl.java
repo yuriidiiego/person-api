@@ -48,10 +48,10 @@ public class PersonServiceImpl implements IPersonService {
 
   @Override
   public List<PersonResponse> listPersons() {
-    Page<Person> people = personRepository.findAll(
+    Page<Person> person = personRepository.findAll(
       PageRequest.of(0, 20, Sort.by("name"))
     );
-    return people
+    return person
       .stream()
       .map(personMapper::toDto)
       .collect(Collectors.toList());
