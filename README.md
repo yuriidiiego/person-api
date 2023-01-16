@@ -41,9 +41,7 @@ mvn spring-boot:run
 
 ## 🧪 To test the API
 
-You can test the API using the Swagger interface, which is available at the following address: <http://localhost:8080/person/swagger-ui.html>
-
-or, import the file person-api.postman_collection.json into the Postman application for easy testing.
+You can test the API using the Swagger interface, which is available at the following address: **<http://localhost:8080/person/swagger-ui.html>** or, import the file **person-api.postman_collection.json** into the Postman application for easy testing.
 
 ## 📈 Code Quality
 
