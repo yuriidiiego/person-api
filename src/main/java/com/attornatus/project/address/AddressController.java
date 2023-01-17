@@ -62,7 +62,7 @@ public class AddressController {
   )
   @PostMapping("/person/{personId}")
   public ResponseEntity<AddressResponse> createAddress(
-    @Valid @RequestBody CreateAddressRequest addressPostRequest,
+    @Valid @RequestBody CreateAddressRequest createAddressRequest,
     @PathVariable @Parameter(
       description = "Person ID",
       example = "1"
@@ -71,7 +71,7 @@ public class AddressController {
   ) {
     AddressResponse addressResponse = service.createAddressForPerson(
       personId,
-      addressPostRequest
+      createAddressRequest
     );
     return ResponseEntity
       .created(
