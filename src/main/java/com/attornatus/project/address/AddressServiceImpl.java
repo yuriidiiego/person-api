@@ -28,10 +28,10 @@ public class AddressServiceImpl {
 
   public AddressResponse createAddressForPerson(
     long personId,
-    CreateAddressRequest addressPostRequest
+    CreateAddressRequest createAddressRequest
   ) {
     Person person = getPersonById(personId);
-    Address address = addressMapper.toEntity(addressPostRequest);
+    Address address = addressMapper.toEntity(createAddressRequest);
     address = addressRepository.save(address);
     person.addAddress(address);
     personRepository.save(person);
