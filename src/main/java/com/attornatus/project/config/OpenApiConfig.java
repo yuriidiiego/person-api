@@ -25,6 +25,7 @@ import org.springframework.context.annotation.Configuration;
   ),
   servers = {
     @Server(url = "http://localhost:8080", description = "Local server"),
+    @Server(url = "https://person-api-production.up.railway.app", description = "Railway production server")
   }
 )
 public class OpenApiConfig {}
