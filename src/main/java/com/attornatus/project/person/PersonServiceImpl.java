@@ -26,18 +26,18 @@ public class PersonServiceImpl implements IPersonService {
   }
 
   @Override
-  public PersonResponse createPerson(CreatePersonRequest personPostRequest) {
-    Person person = personMapper.toEntity(personPostRequest);
+  public PersonResponse createPerson(CreatePersonRequest createPersonRequest) {
+    Person person = personMapper.toEntity(createPersonRequest);
     return personMapper.toDto(personRepository.save(person));
   }
 
   @Override
   public PersonResponse editPerson(
     Long id,
-    UpdatePersonRequest personPatchRequest
+    UpdatePersonRequest updatePersonRequest
   ) {
     Person person = findPersonById(id);
-    personMapper.updateEntityFromDto(personPatchRequest, person);
+    personMapper.updateEntityFromDto(updatePersonRequest, person);
     return personMapper.toDto(personRepository.save(person));
   }
 

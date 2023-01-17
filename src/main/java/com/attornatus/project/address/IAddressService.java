@@ -7,7 +7,7 @@ import java.util.List;
 public interface IAddressService {
   AddressResponse createAddress(
     Long personId,
-    CreateAddressRequest addressPostRequest
+    CreateAddressRequest createAddressRequest
   );
   List<AddressResponse> listAddresses(Long personId, int page, int size);
   boolean setPrimaryAddress(Long personId, long addressId);
