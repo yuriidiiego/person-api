@@ -42,8 +42,8 @@ public class Person {
   }
 
   public void setMainAddress(Address address) {
-    this.addresses.forEach(a -> a.setPrimary(false));
-    address.setPrimary(true);
+    this.addresses.forEach(a -> a.setPrimaryAddress(false));
+    address.setPrimaryAddress(true);
   }
 
   public Long getId() {
