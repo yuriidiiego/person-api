@@ -12,7 +12,7 @@ This project was developed with the following technologies:
 
 <img src="https://img.shields.io/badge/-Spring%20Boot-6DB33F?style=flat-square&logo=spring&logoColor=white" alt="Spring Boot" /> 
 <img src="https://img.shields.io/badge/-Maven-C71A36?style=flat-square&logo=apache-maven&logoColor=white" alt="Maven" /> <img src="https://img.shields.io/badge/-MapStruct-007396?style=flat-square&logo=mapstruct&logoColor=white" alt="MapStruct" />
-<img src="https://img.shields.io/badge/-PostgreSQL-336791?style=flat-square&logo=postgresql&logoColor=white" alt="PostgreSQL" />
+<img src="https://img.shields.io/badge/-H2-007396?style=flat-square&logo=h2&logoColor=white" alt="H2" />
 <img src="https://img.shields.io/badge/-Swagger-007396?style=flat-square&logo=swagger&logoColor=white" alt="Swagger" />
 
 ## 📝 Requirements
