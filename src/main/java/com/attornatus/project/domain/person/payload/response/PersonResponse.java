@@ -1,4 +1,4 @@
-package com.attornatus.project.person.payload.response;
+package com.attornatus.project.domain.person.payload.response;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.time.LocalDate;

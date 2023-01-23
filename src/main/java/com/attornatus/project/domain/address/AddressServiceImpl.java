@@ -1,9 +1,9 @@
-package com.attornatus.project.address;
+package com.attornatus.project.domain.address;
 
-import com.attornatus.project.address.payload.request.CreateAddressRequest;
-import com.attornatus.project.address.payload.response.AddressResponse;
-import com.attornatus.project.person.Person;
-import com.attornatus.project.person.PersonRepository;
+import com.attornatus.project.domain.address.payload.request.CreateAddressRequest;
+import com.attornatus.project.domain.address.payload.response.AddressResponse;
+import com.attornatus.project.domain.person.Person;
+import com.attornatus.project.domain.person.PersonRepository;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.springframework.http.HttpStatus;

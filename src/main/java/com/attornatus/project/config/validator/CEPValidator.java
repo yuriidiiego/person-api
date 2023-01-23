@@ -3,7 +3,7 @@ package com.attornatus.project.config.validator;
 import static org.springframework.http.HttpStatus.BAD_REQUEST;
 import static org.springframework.http.HttpStatus.CONFLICT;
 
-import com.attornatus.project.address.AddressRepository;
+import com.attornatus.project.domain.address.AddressRepository;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 import org.springframework.stereotype.Component;

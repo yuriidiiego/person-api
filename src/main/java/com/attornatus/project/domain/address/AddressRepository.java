@@ -1,4 +1,4 @@
-package com.attornatus.project.address;
+package com.attornatus.project.domain.address;
 
 import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;

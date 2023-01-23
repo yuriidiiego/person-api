@@ -1,4 +1,4 @@
-package com.attornatus.project.address.payload.request;
+package com.attornatus.project.domain.address.payload.request;
 
 import com.attornatus.project.config.validator.CEP;
 import io.swagger.v3.oas.annotations.media.Schema;

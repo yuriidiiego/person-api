@@ -1,4 +1,4 @@
-package com.attornatus.project.person.payload.request;
+package com.attornatus.project.domain.person.payload.request;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.v3.oas.annotations.media.Schema;

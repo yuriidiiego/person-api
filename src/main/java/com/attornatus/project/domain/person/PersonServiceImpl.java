@@ -1,8 +1,8 @@
-package com.attornatus.project.person;
+package com.attornatus.project.domain.person;
 
-import com.attornatus.project.person.payload.request.CreatePersonRequest;
-import com.attornatus.project.person.payload.request.UpdatePersonRequest;
-import com.attornatus.project.person.payload.response.PersonResponse;
+import com.attornatus.project.domain.person.payload.request.CreatePersonRequest;
+import com.attornatus.project.domain.person.payload.request.UpdatePersonRequest;
+import com.attornatus.project.domain.person.payload.response.PersonResponse;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.springframework.data.domain.Page;

@@ -1,4 +1,4 @@
-package com.attornatus.project.person;
+package com.attornatus.project.domain.person;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

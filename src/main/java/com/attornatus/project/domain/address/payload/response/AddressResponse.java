@@ -1,4 +1,4 @@
-package com.attornatus.project.address.payload.response;
+package com.attornatus.project.domain.address.payload.response;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 

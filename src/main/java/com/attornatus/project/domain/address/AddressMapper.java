@@ -1,7 +1,7 @@
-package com.attornatus.project.address;
+package com.attornatus.project.domain.address;
 
-import com.attornatus.project.address.payload.request.CreateAddressRequest;
-import com.attornatus.project.address.payload.response.AddressResponse;
+import com.attornatus.project.domain.address.payload.request.CreateAddressRequest;
+import com.attornatus.project.domain.address.payload.response.AddressResponse;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 

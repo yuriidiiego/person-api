@@ -1,6 +1,6 @@
-package com.attornatus.project.address;
+package com.attornatus.project.domain.address;
 
-import com.attornatus.project.person.Person;
+import com.attornatus.project.domain.person.Person;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;

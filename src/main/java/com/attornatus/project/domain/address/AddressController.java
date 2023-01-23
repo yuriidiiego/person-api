@@ -1,8 +1,8 @@
-package com.attornatus.project.address;
+package com.attornatus.project.domain.address;
 
-import com.attornatus.project.address.payload.request.CreateAddressRequest;
-import com.attornatus.project.address.payload.response.AddressResponse;
 import com.attornatus.project.config.error.ErrorResponse;
+import com.attornatus.project.domain.address.payload.request.CreateAddressRequest;
+import com.attornatus.project.domain.address.payload.response.AddressResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.Content;
