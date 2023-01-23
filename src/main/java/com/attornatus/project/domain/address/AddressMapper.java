@@ -8,7 +8,7 @@ import org.mapstruct.Mapping;
 @Mapper(componentModel = "spring")
 public interface AddressMapper {
   @Mapping(target = "persons", ignore = true)
-  @Mapping(target = "primary", ignore = true)
+  @Mapping(target = "primaryAddress", ignore = true)
   Address toEntity(CreateAddressRequest addressDto);
 
   AddressResponse toDto(Address address);
