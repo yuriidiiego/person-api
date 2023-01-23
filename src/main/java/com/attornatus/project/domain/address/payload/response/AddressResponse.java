@@ -25,10 +25,10 @@ public class AddressResponse {
   private int number;
 
   @Schema(name = "primary", description = "Primary address", example = "true")
-  private boolean primary;
+  private boolean primaryAddress;
 
-  public boolean isPrimary() {
-    return primary;
+  public boolean isPrimaryAddress() {
+    return primaryAddress;
   }
 
   public AddressResponse(
@@ -42,7 +42,7 @@ public class AddressResponse {
     this.city = city;
     this.zipCode = zipCode;
     this.number = number;
-    this.primary = primary;
+    this.primaryAddress = primary;
   }
 
   public AddressResponse() {}
@@ -79,7 +79,7 @@ public class AddressResponse {
     this.number = number;
   }
 
-  public void setPrimary(boolean primary) {
-    this.primary = primary;
+  public void setPrimaryAddress(boolean primary) {
+    this.primaryAddress = primary;
   }
 }
