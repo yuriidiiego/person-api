@@ -25,13 +25,13 @@ public class Address {
   private int number;
 
   @Column(nullable = false)
-  private boolean primary;
+  private boolean primaryAddress;
 
   @ManyToMany(mappedBy = "addresses")
   private List<Person> persons;
 
-  public boolean isPrimary() {
-    return primary;
+  public boolean isPrimaryAddress() {
+    return primaryAddress;
   }
 
   public String getZipCode() {
@@ -66,8 +66,8 @@ public class Address {
     this.number = number;
   }
 
-  public void setPrimary(boolean primary) {
-    this.primary = primary;
+  public void setPrimaryAddress(boolean primary) {
+    this.primaryAddress = primary;
   }
 
   public List<Person> getPersons() {
