@@ -1,8 +1,8 @@
 package com.attornatus.project.domain.person;
 
+import com.attornatus.project.domain.address.Address;
 import java.time.LocalDate;
 import java.util.List;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,8 +13,6 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-
-import com.attornatus.project.domain.address.Address;
 
 @Entity
 @Table(name = "person")
@@ -36,6 +34,14 @@ public class Person {
     inverseJoinColumns = @JoinColumn(name = "address_id")
   )
   private List<Address> addresses;
+
+  public Person(Long id, String name, LocalDate birthDate) {
+    this.id = id;
+    this.name = name;
+    this.birthDate = birthDate;
+  }
+
+  public Person(){}
 
   public void addAddress(Address address) {
     this.addresses.add(address);
